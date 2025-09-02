@@ -4,9 +4,9 @@ const stripe = require("stripe")(process.env.SECRET_KEY);
 const ethers = require("ethers");
 const { contractAddress, infuraID, Abi } = require("../constants/index");
 
-let provider = new ethers.InfuraProvider("sepolia", infuraID); // ==> this was for sepolia
+// let provider = new ethers.InfuraProvider("sepolia", infuraID); // ==> this was for sepolia
 
-// let provider = new ethers.InfuraProvider("homestead", infuraID); // ==> for the mainnet
+let provider = new ethers.InfuraProvider("homestead", infuraID); // ==> for the mainnet
 
 let contract = new ethers.Contract(contractAddress, Abi, provider);
 
